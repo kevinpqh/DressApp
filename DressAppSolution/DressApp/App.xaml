@@ -1,9 +1,16 @@
 ﻿<Application x:Class="DressApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:DressApp"
+             xmlns:viewModel="clr-namespace:DressApp.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <viewModel:KinectViewModelLoader x:Key="KinectViewModelLoader"/>
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/GlassButton.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/RoundButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>-->
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
