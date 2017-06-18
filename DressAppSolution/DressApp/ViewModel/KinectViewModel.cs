@@ -12,11 +12,11 @@ namespace DressApp.ViewModel
 
         /// Gets the button player.
 
-        //public static SoundPlayer ButtonPlayer { get; private set; }
+        public static SoundPlayer ButtonPlayer { get; private set; }
 
         /// Gets or sets the clothing manager.
 
-        /* ClothingManager ClothingManager
+        ClothingManager ClothingManager
         {
             get { return _clothingManager; }
             set
@@ -26,10 +26,10 @@ namespace DressApp.ViewModel
                 _clothingManager = value;
                 OnPropertyChanged("ClothingManager");
             }
-        }*/
+        }
 
         /// The clothing manager
-        //private ClothingManager _clothingManager;
+        private ClothingManager _clothingManager;
         
         //servicio de kinect
         private readonly KinectService _kinectService;
@@ -53,8 +53,8 @@ namespace DressApp.ViewModel
         #region Constructor
         public KinectViewModel(KinectService kinectService)
         {
-            //ButtonPlayer = new SoundPlayer(Properties.Resources.ButtonClick);
-            //InitializeClothingCategories();
+            ButtonPlayer = new SoundPlayer(Properties.Resources.ButtonClick);
+            InitializeClothingCategories();
             _kinectService = kinectService;
             _kinectService.Initialize();
         }
