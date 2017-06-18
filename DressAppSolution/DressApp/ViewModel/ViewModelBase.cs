@@ -9,17 +9,16 @@ namespace DressApp.ViewModel
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
-        #region Protected Methods
-        /// <summary>
-        /// Called when [property changed].
-        /// </summary>
-        /// <param name="property">The property.</param>
+        #region Metodos Protegidos
+
+        //cuando se llama a la propiedad de cambio  [property changed]
+        //<param name="property">propiedad.</param>
         protected void OnPropertyChanged(string property)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
         }
-        #endregion Protected Methods
+        #endregion Metodos Protegidos
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

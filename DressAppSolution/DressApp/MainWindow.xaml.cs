@@ -56,7 +56,7 @@ namespace DressApp
         public MainWindow()
         {
             InitializeComponent();
-            //Loaded += ((sender, e) => ClothesArea.SetTransformMatrix());
+            Loaded += ((sender, e) => ClothesArea.SetTransformMatrix());
         }
         #endregion .ctor
 

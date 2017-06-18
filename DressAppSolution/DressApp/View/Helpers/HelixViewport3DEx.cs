@@ -4,11 +4,13 @@ using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
 
 namespace KinectFittingRoom.View.Helpers
+
 {
     public class HelixViewport3DEx : HelixViewport3D
     {
         #region Private Fields
-        // matriz3D a cero
+
+    // matriz3D a cero
 
         private Matrix3D _zeroMatrix = new Matrix3D(0, 0, 0, 0
                                                  , 0, 0, 0, 0
@@ -21,8 +23,6 @@ namespace KinectFittingRoom.View.Helpers
  
         public static readonly DependencyProperty ViewportTransformProperty = DependencyProperty.RegisterAttached(
             "ViewportTransform", typeof(Matrix3D), typeof(HelixViewport3DEx), new FrameworkPropertyMetadata(null));
-
-        // Propiedades de CameraTransform 
 
         public static readonly DependencyProperty CameraTransformProperty = DependencyProperty.RegisterAttached(
             "CameraTransform", typeof(Matrix3D), typeof(HelixViewport3DEx), new FrameworkPropertyMetadata(null));
@@ -60,6 +60,7 @@ namespace KinectFittingRoom.View.Helpers
 
         ///GetCameraTransform - obtener el objeto
         // retorna: Matriz que representa la cameraTransform
+
         public Matrix3D GetCameraTransform()
         {
             Matrix3D matx = Matrix3D.Identity;
@@ -81,6 +82,7 @@ namespace KinectFittingRoom.View.Helpers
         // GetViewMatrix - obtener el objeto
         // retorna: Matriz que representa la GetViewMatrix
      
+
         public Matrix3D GetViewMatrix()
         {
             Vector3D z = -Camera.LookDirection;
@@ -99,7 +101,7 @@ namespace KinectFittingRoom.View.Helpers
                               , -Vector3D.DotProduct(y, position)
                               , -Vector3D.DotProduct(z, position), 1);
         }
-
+        
         // GetProjectionMatrix- obtener el objeto
         // retorna: Matriz que representa la GetProjectionMatrix
 
@@ -124,6 +126,7 @@ namespace KinectFittingRoom.View.Helpers
         #region Public Methods
 
         // SetTransformMatrix.
+
         public void SetTransformMatrix()
         {
             SetCurrentValue(ViewportTransformProperty, GetViewportTransform());
