@@ -18,24 +18,26 @@ namespace DressApp.View.Helpers
         {
             var type = Content.GetType();
             var types = new List<Type> {type};
-            var current = type;
-            while (current.BaseType != null)
+            var temp = type;
+            while (temp.BaseType != null)
             {
-                types.Add(current.BaseType);
-                current = current.BaseType;
+                types.Add(temp.BaseType);
+                temp = temp.BaseType;
             }
 
             var visual = (Visual3D)Activator.CreateInstance(type);
             var boundProperties = new HashSet<string>();
-            foreach (var t in types)
+            foreach (var iteratorType in types)
             {
-                foreach (var fi in t.GetFields(BindingFlags.Public | BindingFlags.Static))
+                foreach (var fi in iteratorType.GetFields(BindingFlags.Public | BindingFlags.Static))
                 {
                     var dp = fi.GetValue(null) as DependencyProperty;
-                    if (dp == null) continue;
+                    if (dp == null)
+                        continue;
 
                     var binding = BindingOperations.GetBinding(Content, dp);
-                    if (binding == null) continue;
+                    if (binding == null)
+                        continue;
 
                     boundProperties.Add(dp.Name);
                     BindingOperations.SetBinding(

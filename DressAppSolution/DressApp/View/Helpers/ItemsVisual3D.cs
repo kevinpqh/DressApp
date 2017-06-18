@@ -8,36 +8,29 @@ namespace DressApp.View.Helpers
     public class ItemsVisual3D : ModelVisual3D
     {
         #region Dependency Properties
-        /// <summary>
-        /// Item template property
-        /// </summary>
+
+        // Propiedades de ItemTemplate 
         public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register(
             "ItemTemplate", typeof(DataTemplate3D), typeof(ItemsVisual3D), new PropertyMetadata(null));
-        /// <summary>
-        /// The items source property
-        /// </summary>
+
+        // Propiedades de items source 
+
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource", typeof(IEnumerable), typeof(ItemsVisual3D)
             , new PropertyMetadata(null, (s, e) => ((ItemsVisual3D)s).ItemsSourceChanged(e)));
         #endregion Dependency Properties
         #region Public Properties
-        /// <summary>
-        /// Gets or sets the <see cref="DataTemplate3D" /> used to display each item.
-        /// </summary>
-        /// <value>
-        /// The item template.
-        /// </value>
+
+        // Gets y sets de la clase DataTemplate3D usado para mostrar cada item.
+
         public DataTemplate3D ItemTemplate
         {
             get { return (DataTemplate3D)GetValue(ItemTemplateProperty); }
             set { SetValue(ItemTemplateProperty, value); }
         }
-        /// <summary>
-        /// Gets or sets a collection used to generate the content of the <see cref="ItemsVisual3D" />.
-        /// </summary>
-        /// <value>
-        /// The items source.
-        /// </value>
+
+        // Gets y sets de la colleccion usada para generar el contenido de la clase ItemsVisual3D
+
         public ICollection ItemsSource
         {
             get { return (ICollection)GetValue(ItemsSourceProperty); }
@@ -45,12 +38,9 @@ namespace DressApp.View.Helpers
         }
         #endregion Public Properties
         #region Private Methods
-        /// <summary>
-        /// Handles changes in the ItemsSource property.
-        /// </summary>
-        /// <param name="e">
-        /// The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.
-        /// </param>
+
+        // Mano cambia propiedades de ItemsSource .
+
         private void ItemsSourceChanged(DependencyPropertyChangedEventArgs e)
         {
             Children.Clear();

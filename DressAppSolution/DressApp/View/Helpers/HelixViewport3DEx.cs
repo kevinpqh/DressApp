@@ -3,49 +3,42 @@ using System.Windows;
 using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
 
-namespace DressApp.View.Helpers
+namespace KinectFittingRoom.View.Helpers
+
 {
     public class HelixViewport3DEx : HelixViewport3D
     {
         #region Private Fields
-        /// <summary>
-        /// The zero matrix
-        /// </summary>
+
+    // matriz3D a cero
+
         private Matrix3D _zeroMatrix = new Matrix3D(0, 0, 0, 0
                                                  , 0, 0, 0, 0
                                                  , 0, 0, 0, 0
                                                  , 0, 0, 0, 0);
         #endregion Private Fields
         #region Dependency Properties
-        /// <summary>
-        /// The ViewportTransform property
-        /// </summary>
+
+        // Propiedades de ViewportTransform
+ 
         public static readonly DependencyProperty ViewportTransformProperty = DependencyProperty.RegisterAttached(
             "ViewportTransform", typeof(Matrix3D), typeof(HelixViewport3DEx), new FrameworkPropertyMetadata(null));
-        /// <summary>
-        /// The CameraTransform property
-        /// </summary>
+
         public static readonly DependencyProperty CameraTransformProperty = DependencyProperty.RegisterAttached(
             "CameraTransform", typeof(Matrix3D), typeof(HelixViewport3DEx), new FrameworkPropertyMetadata(null));
         #endregion Dependency Properties
         #region Public Properties
-        /// <summary>
-        /// Gets or sets the camera transform.
-        /// </summary>
-        /// <value>
-        /// The camera transform.
-        /// </value>
+
+        // Gets y sets de CameraTransform.
+
         public Matrix3D CameraTransform
         {
             get { return (Matrix3D)GetValue(CameraTransformProperty); }
             set { SetValue(CameraTransformProperty, value); }
         }
-        /// <summary>
-        /// Gets or sets the viewport transform.
-        /// </summary>
-        /// <value>
-        /// The viewport transform.
-        /// </value>
+
+        // Gets y sets de viewportTransform.
+
         public Matrix3D ViewportTransform
         {
             get { return (Matrix3D)GetValue(ViewportTransformProperty); }
@@ -53,10 +46,9 @@ namespace DressApp.View.Helpers
         }
         #endregion Public Properties
         #region Private Methods
-        /// <summary>
-        /// Gets the viewport transform.
-        /// </summary>
-        /// <returns>Viewport transform matrix</returns>
+
+        // GetViewportTransform - Obtener el objeto
+
         private Matrix3D GetViewportTransform()
         {
             return new Matrix3D(Viewport.ActualWidth / 2, 0, 0, 0
@@ -65,10 +57,10 @@ namespace DressApp.View.Helpers
                               , Viewport.ActualWidth / 2
                               , Viewport.ActualHeight / 2, 0, 1);
         }
-        /// <summary>
-        /// Gets the camera transform.
-        /// </summary>
-        /// <returns>Matrix representing the camera transform</returns>
+
+        ///GetCameraTransform - obtener el objeto
+        // retorna: Matriz que representa la cameraTransform
+
         public Matrix3D GetCameraTransform()
         {
             Matrix3D matx = Matrix3D.Identity;
@@ -86,10 +78,11 @@ namespace DressApp.View.Helpers
             matx.Append(GetProjectionMatrix());
             return matx;
         }
-        /// <summary>
-        /// Gets the view matrix.
-        /// </summary>
-        /// <returns>Matrix representing the view transform</returns>
+
+        // GetViewMatrix - obtener el objeto
+        // retorna: Matriz que representa la GetViewMatrix
+     
+
         public Matrix3D GetViewMatrix()
         {
             Vector3D z = -Camera.LookDirection;
@@ -108,10 +101,10 @@ namespace DressApp.View.Helpers
                               , -Vector3D.DotProduct(y, position)
                               , -Vector3D.DotProduct(z, position), 1);
         }
-        /// <summary>
-        /// Gets the projection matrix.
-        /// </summary>
-        /// <returns>Matrix representing the projection transform</returns>
+        
+        // GetProjectionMatrix- obtener el objeto
+        // retorna: Matriz que representa la GetProjectionMatrix
+
         private Matrix3D GetProjectionMatrix()
         {
             double aspectRatio = Viewport.ActualWidth / Viewport.ActualHeight;
@@ -131,9 +124,9 @@ namespace DressApp.View.Helpers
         }
         #endregion Private Methods
         #region Public Methods
-        /// <summary>
-        /// Sets the ViewportTransform matrix and CameraTransform matrix.
-        /// </summary>
+
+        // SetTransformMatrix.
+
         public void SetTransformMatrix()
         {
             SetCurrentValue(ViewportTransformProperty, GetViewportTransform());
