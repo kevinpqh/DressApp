@@ -20,6 +20,33 @@
 			   helpers:SizeObserver.ObservedHeight="{Binding KinectService.Height, Mode=OneWayToSource}"/>
 
 
+        <helpers:HelixViewport3DEx CameraRotationMode="Turntable"
+                                   ModelUpDirection="0, 1, 0" 
+                                   x:Name="ClothesArea"
+                                   ShowCoordinateSystem="False" 
+                                   Visibility="{Binding KinectService.ClothesAreaVisibility}"
+                                   ShowViewCube="{Binding DebugModeOn}"
+                                   ShowFrameRate="{Binding DebugModeOn}"
+                                   ShowCameraInfo="{Binding DebugModeOn}"
+                                   IsHitTestVisible="False"
+                                   ClipToBounds="False" 
+								   Width="{Binding KinectService.Width}" 
+								   Height="{Binding KinectService.Height}"
+                                   CameraTransform="{Binding Path=}">
+            <!--<h:HelixViewport3D.Camera>
+                <OrthographicCamera Position="0,0,10" LookDirection="0,0,-10" UpDirection="0,1,0"/>
+            </h:HelixViewport3D.Camera>
+            <h:DefaultLights/>
+            <helpers:ItemsVisual3D ItemTemplate="{StaticResource ModelTemplate}" 
+                                   ItemsSource="{Binding Path=ChosenClothesModels.Values, Source={x:Static viewModel:ClothingManager.Instance}}"/>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid Width="{Binding KinectService.Width}" Height="{Binding KinectService.Height}"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>-->
+        </helpers:HelixViewport3DEx>
+
+
 
         <!--Grid containing Skeleton parts for debugging-->
         <ItemsControl ItemsSource="{Binding KinectService.SkeletonManager.SkeletonParts}" 

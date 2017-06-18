@@ -10,22 +10,22 @@ namespace DressApp.ViewModel
     {
         #region Datos Privados
 
-        /// Kinect view model
+        // Kinect view model
         static KinectViewModel _kinectViewModel;
-        /// Kinect service
+        // Kinect service
         static KinectService _kinectService;
 
         #endregion
 
        
-        /// Gets view model.
+        // Gets view model.
         public KinectViewModel KinectViewModel
         {
             get { return _kinectViewModel ?? (_kinectViewModel = new KinectViewModel(_kinectService)); }
         }
 
         #region Contructor
-        /// Initializes a new instance of the <see cref="KinectViewModelLoader"/> class.
+        // para unicializar una nueva instancia <see cref="KinectViewModelLoader"/>
         public KinectViewModelLoader()
         {
             _kinectService = new KinectService();
@@ -33,9 +33,7 @@ namespace DressApp.ViewModel
             
         }
         #endregion
-
-
-
+        
         #region Metodos Publicos        
         public static void Cleanup()
         {

@@ -22,27 +22,27 @@ namespace DressApp.ViewModel
         //kinect default
         private KinectSensor _kinectSensor;
 
-        // WritableBitmap that source from Kinect camera is written to
+        // WritableBitmap se escribe el origen de la camara 
         private WriteableBitmap _kinectCameraImage;
 
-        //Bounds of camera source
+        //limites de camara
         private Int32Rect _cameraSourceBounds;
 
-        // Number of bytes per line
+        // numero de bytes por linea
         private int _colorStride;
 
-        /*// User's Hand
-        private HandTracking _hand;*/
+        // Mano del Usuario
+        private HandTracking _hand;
 
-
+#if DEBUG
         // The skeleton manager
         private SkeletonManager _skeletonManager;
+#endif
 
-
-        // Visibility of ErrorGrid 
+        // vista de ErrorGrid 
         private Visibility _errorGridVisibility;
         
-        // Visibility of ClothesArea 
+        // vista de ClothesArea 
         private Visibility _clothesAreaVisibility;
         
         //ancho de la imagen
@@ -76,7 +76,7 @@ namespace DressApp.ViewModel
             }
         }
         
-        /// Gets or sets the Kinect camera image.
+        /// Gets or sets del Kinect camera image.
         public WriteableBitmap KinectCameraImage
         {
             get { return _kinectCameraImage; }
@@ -87,13 +87,8 @@ namespace DressApp.ViewModel
                 _kinectCameraImage = value;
                 OnPropertyChanged("KinectCameraImage");
             }
-        }/*
-        /// <summary>
-        /// Gets or sets the hand.
-        /// </summary>
-        /// <value>
-        /// The hand.
-        /// </value>z
+        }
+        //Gets o sets de la mano
         public HandTracking Hand
         {
             get { return _hand; }
@@ -104,9 +99,9 @@ namespace DressApp.ViewModel
                 _hand = value;
                 OnPropertyChanged("Hand");
             }
-        }*/
+        }
 
-        
+#if DEBUG
         // Gets o sets de skeleton manager.
         public SkeletonManager SkeletonManager
         {
@@ -119,9 +114,10 @@ namespace DressApp.ViewModel
                 OnPropertyChanged("SkeletonManager");
             }
         }
+#endif
 
-        
-        // Gets o sets de width.
+
+        // Gets o sets de ancho.
         public double Width
         {
             get { return _imageWidth; }
@@ -134,7 +130,7 @@ namespace DressApp.ViewModel
             }
         }
 
-        /// Gets o sets de height.
+        /// Gets o sets de Alto.
         public double Height
         {
             get { return _imageHeight; }
@@ -147,7 +143,7 @@ namespace DressApp.ViewModel
             }
         }
         
-        /// Gets or sets visibility of ClothesArea
+        /// Gets o sets de ClothesArea
         public Visibility ClothesAreaVisibility
         {
             get { return _clothesAreaVisibility; }
@@ -160,7 +156,7 @@ namespace DressApp.ViewModel
             }
         }
 
-        /// Gets or sets visibility of ErrorGrid
+        /// Gets o sets de ErrorGrid
         
         public Visibility ErrorGridVisibility
         {
@@ -174,7 +170,7 @@ namespace DressApp.ViewModel
             }
         }
         
-        /// Gets or sets the error grid message.
+        /// Gets o sets grid del mensaje de error
         public string ErrorGridMessage
         {
             get { return _errorGridMessage; }
@@ -274,11 +270,12 @@ namespace DressApp.ViewModel
                     ErrorGridVisibility = Visibility.Collapsed;
                     ClothesAreaVisibility = Visibility.Visible;
                 }
-                /*Hand.UpdateHandCursor(skeleton, Kinect, Width, Height);
-                ClothingManager.Instance.UpdateItemPosition(skeleton, Kinect, Width, Height);*/
-
+                Hand.UpdateHandCursor(skeleton, Kinect, Width, Height);
+                ClothingManager.Instance.UpdateItemPosition(skeleton, Kinect, Width, Height);
+#if DEBUG
                 Brush brush = Brushes.Coral;
                 SkeletonManager.DrawSkeleton(_skeletons, brush, _kinectSensor, Width, Height);
+#endif
 
             }
         }
@@ -337,7 +334,7 @@ namespace DressApp.ViewModel
         //Inicializa Instancias
         public void Initialize()
         {
-            //Hand = new HandTracking();
+            Hand = new HandTracking();
 #if DEBUG
             SkeletonManager = new SkeletonManager();
 #endif
@@ -360,7 +357,7 @@ namespace DressApp.ViewModel
         }
        
 
-        /// Mapps a point from Kinect space to canvas space
+        //Muestra en el espacio de kinect de canvas
         public static Point3D GetJointPoint(Joint joint, KinectSensor sensor, double width, double height)
         {
             var point = sensor.CoordinateMapper.MapSkeletonPointToDepthPoint(joint.Position, sensor.DepthStream.Format);
