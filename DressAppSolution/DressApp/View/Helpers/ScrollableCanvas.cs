@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using KinectFittingRoom.View.Buttons.Events;
+using DressApp.View.Buttons.Events;
 
-namespace KinectFittingRoom.View.Helpers
+namespace DressApp.View.Helpers
 {
     // Clase ItemsControl que responde a los eventos de Kinect
 

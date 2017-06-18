@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
 
-namespace KinectFittingRoom.View.Helpers
+namespace DressApp.View.Helpers
 
 {
     public class HelixViewport3DEx : HelixViewport3D
