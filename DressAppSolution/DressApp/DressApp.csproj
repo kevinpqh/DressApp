@@ -67,6 +67,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ClothingItems\BagItem.cs" />
+    <Compile Include="Model\ClothingItems\ClothingItemBase.cs" />
+    <Compile Include="Model\ClothingItems\DressItem.cs" />
+    <Compile Include="Model\ClothingItems\GlassesItem.cs" />
+    <Compile Include="Model\ClothingItems\HatItem.cs" />
+    <Compile Include="Model\ClothingItems\SkirtItem.cs" />
+    <Compile Include="Model\ClothingItems\TieItem.cs" />
+    <Compile Include="Model\ClothingItems\TopItem.cs" />
     <Compile Include="Model\SkeletonManager.cs" />
     <Compile Include="ViewModel\ButtonItems\BagButtonViewModel.cs" />
     <Compile Include="ViewModel\ButtonItems\ButtonViewModelBase.cs" />
@@ -164,7 +172,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
