@@ -67,5 +67,28 @@ namespace DressApp.Properties
                 resourceCulture = value;
             }
         }
+
+
+        //SE AGREGA EL RESOURCE DE LAS IMAGENES
+
+
+        //Busca un recurso localizado
+        internal static System.Drawing.Bitmap menu
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap menu_camera
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("menu_camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
