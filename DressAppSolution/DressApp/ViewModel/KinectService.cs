@@ -259,7 +259,7 @@ namespace DressApp.ViewModel
                 if (skeleton == null)
                 {
                     ErrorGridVisibility = Visibility.Visible;
-                    ErrorGridMessage = "No detectado esqueleto pierde o su posición." + Environment.NewLine +
+                    ErrorGridMessage = "No detectado esqueleto o pierde su posición." + Environment.NewLine +
                         "Espera un minuto y compruebe si está de pie a una distancia apropiada del dispositivo.";
                     ClothesAreaVisibility = Visibility.Hidden;
                     
