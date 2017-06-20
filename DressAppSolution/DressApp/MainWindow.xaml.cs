@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace DressApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    //Interaccion Logica del ManinWindow
     public partial class MainWindow
     {
 
@@ -62,19 +60,20 @@ namespace DressApp
         private static void Hand_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             MainWindow window = d as MainWindow;
-            if (window != null) { }
-            window.HandleHandMoved(window.LeftPosition, window.RightPosition);
+            if (window != null)
+                window.HandleHandMoved(window.LeftPosition, window.RightPosition);
         }
-        // Maneja el evento de movimiento de la mano.
+        // Maneja el evento de movimiento de la mano.//puntero
         private void HandleHandMoved(Point leftHand, Point rightHand)
         {
             HandCursor.Visibility = Visibility.Collapsed;
-
+            //Mano Izaquierda
             var element = (CloseAppGrid.Visibility == Visibility.Visible) ? CloseAppGrid.InputHitTest(leftHand) : ButtonPanelsCanvas.InputHitTest(leftHand);
             var hand = leftHand;
 
             if (!(element is UIElement))
             {
+                //Mano Derecha
                 element = (CloseAppGrid.Visibility == Visibility.Visible) ? CloseAppGrid.InputHitTest(rightHand) : ButtonPanelsCanvas.InputHitTest(rightHand);
                 hand = rightHand;
                 if (!(element is UIElement))

@@ -26,7 +26,7 @@ namespace DressApp.ViewModel
         }
 
         #region Contructor
-        // para unicializar una nueva instancia <see cref="KinectViewModelLoader"/>
+        // para unicializar una nueva instancia
         public KinectViewModelLoader()
         {
             _kinectService = new KinectService();

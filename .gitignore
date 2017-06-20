@@ -54,3 +54,7 @@ Icon
 *.user
 *.tmp_proj
 *.tmp
+
+# But not these files...
+!Resources/
+!Resources/Models/Bags/*

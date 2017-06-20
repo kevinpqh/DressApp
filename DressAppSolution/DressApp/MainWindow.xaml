@@ -8,7 +8,7 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:h="http://helix-toolkit.org/wpf"
-        xmlns:kinectFittingRoom="clr-namespace:DressApp"
+        xmlns:dressApp="clr-namespace:DressApp"
         xmlns:topMenuButtons="clr-namespace:DressApp.ViewModel.ButtonItems.TopMenuButtons"
         xmlns:clothingItems="clr-namespace:DressApp.Model.ClothingItems"
         xmlns:viewModel="clr-namespace:DressApp.ViewModel"
@@ -19,7 +19,7 @@
         Height="768" Width="1366"
         Cursor="None"
         DataContext="{Binding KinectViewModel, Source={StaticResource KinectViewModelLoader}}">
-    <!--Resources used in MainWindow-->
+    <!--Los Recuros Utilizados-->
     <Window.Resources>
         <converters:ReducedValueConverter x:Key="ReducedValueConverter"/>
         <converters:BitmapToImageSourceConverter x:Key="BitmapToImageSourceConverter"/>
@@ -33,20 +33,21 @@
     </Window.Resources>
     <Window.Style>
         <Style>
-            <Setter Property="kinectFittingRoom:MainWindow.LeftPosition" Value="{Binding KinectService.Hand.LeftPosition}"/>
-            <Setter Property="kinectFittingRoom:MainWindow.RightPosition" Value="{Binding KinectService.Hand.RightPosition}"/>
+            <Setter Property="dressApp:MainWindow.LeftPosition" Value="{Binding KinectService.Hand.LeftPosition}"/>
+            <Setter Property="dressApp:MainWindow.RightPosition" Value="{Binding KinectService.Hand.RightPosition}"/>
         </Style>
     </Window.Style>
-    <!--Main Grid. Keeps all of the UI elements.-->
+    
+    <!--Pantalla Principal Donde estan los elementos-->
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Resources/curtains.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <!--Image from the Kinect camera-->
+        
+        <!--Imagen de la camara del kinect-->
         <Image x:Name="ImageArea" Source="{Binding KinectService.KinectCameraImage}"
 			   helpers:SizeObserver.Observe="True"
 			   helpers:SizeObserver.ObservedWidth="{Binding KinectService.Width, Mode=OneWayToSource}"
 			   helpers:SizeObserver.ObservedHeight="{Binding KinectService.Height, Mode=OneWayToSource}"/>
+        
+        
         <!--3D control-->
         <helpers:HelixViewport3DEx CameraRotationMode="Turntable"
                                    ModelUpDirection="0, 1, 0" 
@@ -74,7 +75,9 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </helpers:HelixViewport3DEx>
-        <!--Canvas containing button panels-->
+        
+        
+        <!--Canvas Contine el panel de botones-->
         <Canvas Name="ButtonPanelsCanvas" Width="{Binding KinectService.Width}" Height="{Binding KinectService.Height}">
             <Canvas x:Name="LeftPanel"
                     Width="160" 
@@ -83,7 +86,7 @@
                     Background="GhostWhite" 
                     Opacity="0.5" 
                     Margin="20"/>
-            <!--StackPanel containing all the buttons with clothing categories-->
+            <!--Botones de lac categorias-->
             <helpers:ScrollableCanvas x:Name="LeftScrollableCanvas"
                                       ItemsSource="{Binding ActualClothingCategories, Source={x:Static viewModel:ClothingManager.Instance}}" 
                                       ClipToBounds="True"
@@ -125,7 +128,7 @@
                     Opacity="0.5" 
 					Canvas.Right="0"
                     Margin="20"/>
-            <!--StackPanel containing all the buttons with clothes-->
+            <!--botones de ropas-->
             <helpers:ScrollableCanvas ItemsSource="{Binding Clothing, Source={x:Static viewModel:ClothingManager.Instance}}"
                                       ClipToBounds="True"
                                       Width="{Binding ActualWidth, ElementName=RightPanel}"
@@ -157,7 +160,7 @@
                     </DataTemplate>
                 </helpers:ScrollableCanvas.ItemTemplate>
             </helpers:ScrollableCanvas>
-            <!--StackPanel containing all the buttons from top menu-->
+            <!--botones de menu-->
             <StackPanel
                     Orientation="Horizontal"
                     Width="650"
@@ -242,10 +245,11 @@
                 </ItemsControl>
             </StackPanel>
         </Canvas>
-        <!--Grids used for closing application-->
+        
+        <!--Para cerra la Aplicacion-->
         <Grid Width="{Binding ActualWidth, ElementName=ImageArea}" Background="Black" Opacity="0.5"
               Visibility="{Binding CloseAppGridVisibility, Source={x:Static topMenuButtons:TopMenuManager.Instance}}">
-            <TextBlock Text="Czy na pewno chcesz wyjść z programu?" Opacity="1"
+            <TextBlock Text="¿Seguro que desea salir?" Opacity="1"
                        FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,200" Foreground="White"/>
         </Grid>
         <Grid Name="CloseAppGrid" Width="{Binding ActualWidth, ElementName=ImageArea}"
@@ -281,7 +285,8 @@
                 </i:Interaction.Triggers>
             </buttons:KinectButton>
         </Grid>
-        <!--Hand Cursor canvas-->
+        
+        <!--canvas cursor de la mano-->
         <Canvas Width="{Binding KinectService.Width}" Height="{Binding KinectService.Height}">
             <Canvas Name="HandCursor" Width="70" Height="70" Visibility="Collapsed">
                 <Ellipse Width="{Binding RelativeSource={RelativeSource AncestorType=Canvas}, Path=ActualWidth}" 
@@ -293,20 +298,17 @@
                 <Image Source="/Resources/Icons/Hand.png" Width="60" Height="60" Margin="5,5,5,5"/>
             </Canvas>
         </Canvas>
-        <!--Grid containing Skeleton parts for debugging-->
-        <ItemsControl ItemsSource="{Binding KinectService.SkeletonManager.SkeletonParts}" 
-                      Visibility="{Binding DebugModeOn, Converter={StaticResource BoolToVisibilityConverter}}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid Width="{Binding KinectService.Width}" Height="{Binding KinectService.Height}"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        <!--Grid used for taking screenshots-->
+        
+        
+        
+        
+        <!--Grid Para camtura de pantalla-->
         <Grid Name="ScreenshotGrid" Opacity="0.7" Background="Black" Visibility="Collapsed">
             <TextBlock Name="ScreenshotText" FontSize="40" HorizontalAlignment="Center" Opacity="0.7" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
-        <!--Grid used for viewing error messages-->
+        
+        
+        <!--Grid Para ver los Mensaje de error-->
         <Grid Name="ErrorGrid" Opacity="0.7" Background="Black" Visibility="{Binding KinectService.ErrorGridVisibility}">
             <TextBlock Text="{Binding KinectService.ErrorGridMessage}" 
                        FontSize="20" TextAlignment="Center" Opacity="0.7" VerticalAlignment="Center" Foreground="White"/>
