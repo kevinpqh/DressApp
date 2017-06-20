@@ -148,7 +148,7 @@ namespace DressApp.ViewModel
                     , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\long_skirt_indian.obj")
                     { Image = Properties.Resources.long_skirt_indian, BottomJointToTrackScale = JointType.FootLeft }
                     , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\long_skirt_violet.obj")
-                    { Image = Properties.Resources.long_skirt_violet2, BottomJointToTrackScale = JointType.FootLeft }
+                    { Image = Properties.Resources.long_skirt_violet, BottomJointToTrackScale = JointType.FootLeft }
                      , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\big_skirt_green.obj")
                     { Image = Properties.Resources.breezy_skirt_winter, BottomJointToTrackScale = JointType.FootLeft }
                      , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\big_skirt_waves.obj")
