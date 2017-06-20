@@ -5,12 +5,9 @@ namespace DressApp.Model.ClothingItems
 {
     class HatItem : ClothingItemBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HatItem"/> class.
-        /// </summary>
-        /// <param name="model">3D model of the hat</param>
-        /// <param name="ratio">Size ratio</param>
-        /// <param name="deltaY">Default Y position</param>
+
+        //constructor de HatItem
+
         public HatItem(Model3DGroup model, double ratio, double deltaY)
             : base(model, ratio, deltaY)
         {

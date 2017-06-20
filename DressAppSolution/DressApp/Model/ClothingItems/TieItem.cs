@@ -5,12 +5,8 @@ namespace DressApp.Model.ClothingItems
 {
     class TieItem : ClothingItemBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TieItem"/> class.
-        /// </summary>
-        /// <param name="model">3D model</param>
-        /// <param name="ratio">Size ratio</param>
-        /// <param name="deltaY">Default Y position</param>
+        // constructor TieItem
+
         public TieItem(Model3DGroup model, double ratio, double deltaY)
             : base(model, ratio, deltaY)
         {

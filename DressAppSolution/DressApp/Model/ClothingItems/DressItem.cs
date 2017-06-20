@@ -5,14 +5,10 @@ namespace DressApp.Model.ClothingItems
 {
     class DressItem : ClothingItemBase
     {
-        #region .ctor
-        /// <summary>
-        /// Constructor of Dress object
-        /// </summary>
-        /// <param name="model">3D model</param>
-        /// <param name="bottomJoint">Bottom joint to track size</param>
-        /// <param name="ratio">Hips width with margins</param>
-        /// <param name="deltaY">Default Y position</param>
+        #region ctor
+
+        // Constructor de DressObject
+
         public DressItem(Model3DGroup model, JointType bottomJoint, double ratio, double deltaY)
             : base(model, ratio, deltaY)
         {
@@ -22,6 +18,6 @@ namespace DressApp.Model.ClothingItems
             LeftJointToTrackScale = JointType.ShoulderCenter;
             RightJointToTrackScale = bottomJoint;
         }
-        #endregion .ctor
+        #endregion ctor
     }
 }

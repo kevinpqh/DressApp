@@ -5,12 +5,8 @@ namespace DressApp.Model.ClothingItems
 {
     class BagItem : ClothingItemBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BagItem"/> class.
-        /// </summary>
-        /// <param name="model">3D model of the bag</param>
-        /// <param name="ratio">Size ratio</param>
-        /// <param name="deltaY">Default Y position</param>
+        /// Constructores de BagItem
+
         public BagItem(Model3DGroup model, double ratio, double deltaY)
             : base(model, ratio, deltaY)
         {
