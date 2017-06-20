@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace KinectFittingRoom.View.Buttons.Events
+namespace DressApp.View.Buttons.Events
 {
 
     //Maneja el cursor de la mano
@@ -13,7 +13,7 @@ namespace KinectFittingRoom.View.Buttons.Events
     
         private static ButtonsManager _instance;
     
-        ///singleton
+        //singleton
     
         private static bool _isInitialized;
     

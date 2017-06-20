@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DressApp.ViewModel
 {
+    //carga el kinect view model
     public class KinectViewModelLoader
     {
         #region Datos Privados

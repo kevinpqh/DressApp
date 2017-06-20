@@ -1,4 +1,5 @@
-﻿using DressApp.ViewModel.Helpers;
+﻿using DressApp.Model.ClothingItems;
+using DressApp.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

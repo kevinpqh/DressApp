@@ -17,7 +17,7 @@ namespace DressApp.ViewModel.ButtonItems.TopMenuButtons
         }
         #endregion
 
-        #region Methodos
+        #region Metodos
 
         //Muestra o esconde los botones del menu top
         public override void ClickExecuted()

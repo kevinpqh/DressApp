@@ -8,49 +8,41 @@ namespace DressApp.Model.ClothingItems
 {
     public abstract class ClothingItemBase : ViewModelBase
     {
-        #region Protected Fields
+        #region Atributos Protegidos
         
         // Tolerancia
-        
         protected double Tolerance;
-        #endregion Protected Fields
-        #region Private Fields
+        #endregion
+
+        #region Atributos Privados
         
         // escalas del modelo
-        
         private double _heightScale;
-        
         
         private double _widthScale;
 
         // determina la medida del model.
-
         private double _heightModelScale;
-        
-
         
         private double _widthModelScale;
         
         // model
-        
         private Model3DGroup _model;
 
         // _basicBounds del model
-
         private Rect3D _basicBounds;
-        #endregion Private Fields
-        #region Public Properties
+
+        #endregion
+
+        #region Propiedades Publicas
         
         // Gets y sets angulo.
-
         public double Angle { get; set; }
         
         // Gets matrix para scaleTransform.
- 
         public Transform3D ScaleTransformation { get; protected set; }
         
         // Gets y sets model.
- 
         public Model3DGroup Model
         {
             get { return _model; }
@@ -64,7 +56,6 @@ namespace DressApp.Model.ClothingItems
         }
         
         // Gets y sets  height
-
         public double HeightScale
         {
             get { return _heightScale; }
@@ -114,8 +105,9 @@ namespace DressApp.Model.ClothingItems
         // Gets y sets RightJointToTrackScale
 
         public JointType RightJointToTrackScale { get; protected set; }
-        #endregion Public Properties
-        #region .ctor
+        #endregion
+
+        #region Constructor
         
         // Constructor de ClothingItemBase
  
@@ -128,7 +120,8 @@ namespace DressApp.Model.ClothingItems
             DeltaPosition = deltaPosition;
         }
         #endregion
-        #region Public Methods
+
+        #region Metodos Publicos
         
         // actualizar item position
 
@@ -141,8 +134,9 @@ namespace DressApp.Model.ClothingItems
 
             TrackSkeletonParts(skeleton, sensor, width, height);
         }
-        #endregion Public Methods
-        #region Private Methods
+        #endregion
+
+        #region Metodos Privados
         
         // Set position for part of set
  
@@ -247,7 +241,8 @@ namespace DressApp.Model.ClothingItems
             _widthModelScale = _heightModelScale = ratio * Tolerance;
             SetScaleTransformation();
         }
-        #endregion Private Methods
+        #endregion
+
         #region Enums
         public enum ClothingType
         {

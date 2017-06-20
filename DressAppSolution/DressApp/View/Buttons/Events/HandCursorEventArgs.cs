@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 
-namespace KinectFittingRoom.View.Buttons.Events
+namespace DressApp.View.Buttons.Events
 {
 
     //manejo de Cursores de Manos
 
     public class HandCursorEventArgs : RoutedEventArgs
     {
-        #region Public Properties
+        #region prpiedades publicas
         
         // X 
         
@@ -16,8 +16,9 @@ namespace KinectFittingRoom.View.Buttons.Events
         // Y 
         
         public double Y { get; set; }
-        #endregion Public Properties
-        #region .ctor
+        #endregion
+
+        #region Contructor
         
         //constructor HandCursorEventArgs
         

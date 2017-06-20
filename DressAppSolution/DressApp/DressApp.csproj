@@ -44,6 +44,34 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism.Composition, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Interactivity.5.0.0\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -67,6 +95,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\BitmapToImageSourceConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
+    <Compile Include="Converters\IncreasedValueConverter.cs" />
+    <Compile Include="Converters\ReducedValueConverter.cs" />
+    <Compile Include="Converters\ValueToVisibilityConverter.cs" />
     <Compile Include="Model\ClothingItems\BagItem.cs" />
     <Compile Include="Model\ClothingItems\ClothingItemBase.cs" />
     <Compile Include="Model\ClothingItems\DressItem.cs" />
@@ -139,6 +173,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Styles\GlassButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\RoundButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -166,14 +208,329 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Resources\Models\Bags\armani_bag_beige.mtl" />
+    <None Include="Resources\Models\Bags\armani_bag_beige.obj" />
+    <None Include="Resources\Models\Bags\armani_bag_camel.mtl" />
+    <None Include="Resources\Models\Bags\armani_bag_camel.obj" />
+    <None Include="Resources\Models\Bags\armani_bag_white.mtl" />
+    <None Include="Resources\Models\Bags\armani_bag_white.obj" />
+    <None Include="Resources\Models\Bags\men_bag_brown.mtl" />
+    <None Include="Resources\Models\Bags\men_bag_brown.obj" />
+    <None Include="Resources\Models\Bags\men_bag_brown2.mtl" />
+    <None Include="Resources\Models\Bags\men_bag_brown2.obj" />
+    <None Include="Resources\Models\Bags\men_bag_gray.mtl" />
+    <None Include="Resources\Models\Bags\men_bag_gray.obj" />
+    <None Include="Resources\Models\Bags\small_bag_beige.mtl" />
+    <None Include="Resources\Models\Bags\small_bag_beige.obj" />
+    <None Include="Resources\Models\Bags\small_bag_brown.mtl" />
+    <None Include="Resources\Models\Bags\small_bag_brown.obj" />
+    <None Include="Resources\Models\Bags\small_bag_camel.mtl" />
+    <None Include="Resources\Models\Bags\small_bag_camel.obj" />
+    <None Include="Resources\Models\Bags\small_bag_gray.mtl" />
+    <None Include="Resources\Models\Bags\small_bag_gray.obj" />
+    <None Include="Resources\Models\Bags\sport_bag_blue.mtl" />
+    <None Include="Resources\Models\Bags\sport_bag_blue.obj" />
+    <None Include="Resources\Models\Bags\sport_bag_green.mtl" />
+    <None Include="Resources\Models\Bags\sport_bag_green.obj" />
+    <None Include="Resources\Models\Bags\sport_bag_red.mtl" />
+    <None Include="Resources\Models\Bags\sport_bag_red.obj" />
+    <None Include="Resources\Models\Bags\suitcase_brown.mtl" />
+    <None Include="Resources\Models\Bags\suitcase_brown.obj" />
+    <None Include="Resources\Models\Bags\suitcase_brown2.mtl" />
+    <None Include="Resources\Models\Bags\suitcase_brown2.obj" />
+    <None Include="Resources\Models\Bags\suitcase_gray.mtl" />
+    <None Include="Resources\Models\Bags\suitcase_gray.obj" />
+    <None Include="Resources\Models\Dresses\dress_beige.mtl" />
+    <None Include="Resources\Models\Dresses\dress_beige.obj" />
+    <None Include="Resources\Models\Dresses\dress_blue.mtl" />
+    <None Include="Resources\Models\Dresses\dress_blue.obj" />
+    <None Include="Resources\Models\Dresses\dress_dark.mtl" />
+    <None Include="Resources\Models\Dresses\dress_dark.obj" />
+    <None Include="Resources\Models\Dresses\dress_darkgreen.mtl" />
+    <None Include="Resources\Models\Dresses\dress_darkgreen.obj" />
+    <None Include="Resources\Models\Dresses\dress_egipt.mtl" />
+    <None Include="Resources\Models\Dresses\dress_egipt.obj" />
+    <None Include="Resources\Models\Dresses\dress_green.mtl" />
+    <None Include="Resources\Models\Dresses\dress_green.obj" />
+    <None Include="Resources\Models\Dresses\dress_kitchen.mtl" />
+    <None Include="Resources\Models\Dresses\dress_kitchen.obj" />
+    <None Include="Resources\Models\Dresses\dress_navy.mtl" />
+    <None Include="Resources\Models\Dresses\dress_navy.obj" />
+    <None Include="Resources\Models\Dresses\dress_orange.mtl" />
+    <None Include="Resources\Models\Dresses\dress_orange.obj" />
+    <None Include="Resources\Models\Dresses\dress_pink.mtl" />
+    <None Include="Resources\Models\Dresses\dress_pink.obj" />
+    <None Include="Resources\Models\Dresses\dress_red.mtl" />
+    <None Include="Resources\Models\Dresses\dress_red.obj" />
+    <None Include="Resources\Models\Dresses\dress_sunny.mtl" />
+    <None Include="Resources\Models\Dresses\dress_sunny.obj" />
+    <None Include="Resources\Models\Dresses\dress_violet.mtl" />
+    <None Include="Resources\Models\Dresses\dress_violet.obj" />
+    <None Include="Resources\Models\Glasses\glass_blue.mtl" />
+    <None Include="Resources\Models\Glasses\glass_blue.obj" />
+    <None Include="Resources\Models\Glasses\glass_maroon.mtl" />
+    <None Include="Resources\Models\Glasses\glass_maroon.obj" />
+    <None Include="Resources\Models\Glasses\glass_red.mtl" />
+    <None Include="Resources\Models\Glasses\glass_red.obj" />
+    <None Include="Resources\Models\Glasses\glass_sea.mtl" />
+    <None Include="Resources\Models\Glasses\glass_sea.obj" />
+    <None Include="Resources\Models\Glasses\glass_yellow.mtl" />
+    <None Include="Resources\Models\Glasses\glass_yellow.obj" />
+    <None Include="Resources\Models\Glasses\sunglass_green.mtl" />
+    <None Include="Resources\Models\Glasses\sunglass_green.obj" />
+    <None Include="Resources\Models\Glasses\sunglass_orange.mtl" />
+    <None Include="Resources\Models\Glasses\sunglass_orange.obj" />
+    <None Include="Resources\Models\Glasses\sunglass_violet.mtl" />
+    <None Include="Resources\Models\Glasses\sunglass_violet.obj" />
+    <None Include="Resources\Models\Hats\cowboy_hat.mtl" />
+    <None Include="Resources\Models\Hats\cowboy_hat.obj" />
+    <None Include="Resources\Models\Hats\cowboy_hat_gray.mtl" />
+    <None Include="Resources\Models\Hats\cowboy_hat_gray.obj" />
+    <None Include="Resources\Models\Hats\cowboy_hat_straw.mtl" />
+    <None Include="Resources\Models\Hats\cowboy_hat_straw.obj" />
+    <None Include="Resources\Models\Hats\fedora_brown_hat.mtl" />
+    <None Include="Resources\Models\Hats\fedora_brown_hat.obj" />
+    <None Include="Resources\Models\Hats\fedora_darkgreen_hat.mtl" />
+    <None Include="Resources\Models\Hats\fedora_darkgreen_hat.obj" />
+    <None Include="Resources\Models\Hats\fedora_hat.mtl" />
+    <None Include="Resources\Models\Hats\fedora_hat.obj" />
+    <None Include="Resources\Models\Hats\hat_black.mtl" />
+    <None Include="Resources\Models\Hats\hat_black.obj" />
+    <None Include="Resources\Models\Hats\hat_brown.mtl" />
+    <None Include="Resources\Models\Hats\hat_brown.obj" />
+    <None Include="Resources\Models\Hats\hat_white.mtl" />
+    <None Include="Resources\Models\Hats\hat_white.obj" />
+    <None Include="Resources\Models\Skirts\big_skirt_green.mtl" />
+    <None Include="Resources\Models\Skirts\big_skirt_green.obj" />
+    <None Include="Resources\Models\Skirts\big_skirt_red.mtl" />
+    <None Include="Resources\Models\Skirts\big_skirt_red.obj" />
+    <None Include="Resources\Models\Skirts\big_skirt_waves.mtl" />
+    <None Include="Resources\Models\Skirts\big_skirt_waves.obj" />
+    <None Include="Resources\Models\Skirts\long_skirt.mtl" />
+    <None Include="Resources\Models\Skirts\long_skirt.obj" />
+    <None Include="Resources\Models\Skirts\long_skirt_bikes.mtl" />
+    <None Include="Resources\Models\Skirts\long_skirt_bikes.obj" />
+    <None Include="Resources\Models\Skirts\long_skirt_indian.mtl" />
+    <None Include="Resources\Models\Skirts\long_skirt_indian.obj" />
+    <None Include="Resources\Models\Skirts\long_skirt_violet.mtl" />
+    <None Include="Resources\Models\Skirts\long_skirt_violet.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_checked.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_checked.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_denim.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_denim.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_green_stripes.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_green_stripes.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_navy.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_navy.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_red.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_red.obj" />
+    <None Include="Resources\Models\Skirts\medium_skirt_violet.mtl" />
+    <None Include="Resources\Models\Skirts\medium_skirt_violet.obj" />
+    <None Include="Resources\Models\Ties\tie_beige.mtl" />
+    <None Include="Resources\Models\Ties\tie_beige.obj" />
+    <None Include="Resources\Models\Ties\tie_blue.mtl" />
+    <None Include="Resources\Models\Ties\tie_blue.obj" />
+    <None Include="Resources\Models\Ties\tie_colourful.mtl" />
+    <None Include="Resources\Models\Ties\tie_colourful.obj" />
+    <None Include="Resources\Models\Ties\tie_dark.mtl" />
+    <None Include="Resources\Models\Ties\tie_dark.obj" />
+    <None Include="Resources\Models\Ties\tie_gray.mtl" />
+    <None Include="Resources\Models\Ties\tie_gray.obj" />
+    <None Include="Resources\Models\Ties\tie_green.mtl" />
+    <None Include="Resources\Models\Ties\tie_green.obj" />
+    <None Include="Resources\Models\Ties\tie_stripes.mtl" />
+    <None Include="Resources\Models\Ties\tie_stripes.obj" />
+    <None Include="Resources\Models\Tops\big_top_colourful.mtl" />
+    <None Include="Resources\Models\Tops\big_top_colourful.obj" />
+    <None Include="Resources\Models\Tops\big_top_dark.mtl" />
+    <None Include="Resources\Models\Tops\big_top_dark.obj" />
+    <None Include="Resources\Models\Tops\big_top_green.mtl" />
+    <None Include="Resources\Models\Tops\big_top_green.obj" />
+    <None Include="Resources\Models\Tops\long_top_blue.mtl" />
+    <None Include="Resources\Models\Tops\long_top_blue.obj" />
+    <None Include="Resources\Models\Tops\long_top_pink.mtl" />
+    <None Include="Resources\Models\Tops\long_top_pink.obj" />
+    <None Include="Resources\Models\Tops\top2_green.mtl" />
+    <None Include="Resources\Models\Tops\top2_green.obj" />
+    <None Include="Resources\Models\Tops\top2_orange.mtl" />
+    <None Include="Resources\Models\Tops\top2_orange.obj" />
+    <None Include="Resources\Models\Tops\top_blue.mtl" />
+    <None Include="Resources\Models\Tops\top_blue.obj" />
+    <None Include="Resources\Models\Tops\top_red.mtl" />
+    <None Include="Resources\Models\Tops\top_red.obj" />
+    <None Include="Resources\Models\Tops\tshirt_coral_blue.mtl" />
+    <None Include="Resources\Models\Tops\tshirt_coral_blue.obj" />
+    <None Include="Resources\Models\Tops\tshirt_green_blue.mtl" />
+    <None Include="Resources\Models\Tops\tshirt_green_blue.obj" />
+    <None Include="Resources\Models\Tops\tshirt_navy.mtl" />
+    <None Include="Resources\Models\Tops\tshirt_navy.obj" />
+    <None Include="Resources\Models\Tops\tshirt_olive.mtl" />
+    <None Include="Resources\Models\Tops\tshirt_olive.obj" />
+    <None Include="Resources\Models\Tops\tshirt_orange_blue.mtl" />
+    <None Include="Resources\Models\Tops\tshirt_orange_blue.obj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\ButtonClick.wav" />
+    <Content Include="Resources\CameraClick.wav" />
+    <Resource Include="Resources\Materials\big_skirt_red.jpg" />
+    <Resource Include="Resources\Materials\big_skirt_waves.jpg" />
+    <Resource Include="Resources\Materials\cowboy_hat_straw.jpg" />
+    <Resource Include="Resources\Materials\dress_beige.jpg" />
+    <Resource Include="Resources\Materials\dress_blue.jpg" />
+    <Resource Include="Resources\Materials\dress_dark.jpg" />
+    <Resource Include="Resources\Materials\dress_egipt.jpg" />
+    <Resource Include="Resources\Materials\dress_green.jpg" />
+    <Resource Include="Resources\Materials\dress_kitchen.jpg" />
+    <Resource Include="Resources\Materials\dress_navy.jpg" />
+    <Resource Include="Resources\Materials\dress_orange.jpg" />
+    <Resource Include="Resources\Materials\dress_pink.jpg" />
+    <Resource Include="Resources\Materials\dress_red.jpg" />
+    <Resource Include="Resources\Materials\dress_sunny.jpg" />
+    <Resource Include="Resources\Materials\dress_violet.jpg" />
+    <Resource Include="Resources\Materials\fedora_darkgreen_hat.jpg" />
+    <Resource Include="Resources\Materials\long_skirt_bikes.jpg" />
+    <Resource Include="Resources\Materials\long_skirt_indian.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_checked.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_denim.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_green_stripes.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_navy.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_red.jpg" />
+    <Resource Include="Resources\Materials\short_skirt_violet.jpg" />
+    <Resource Include="Resources\Materials\tie_beige.jpg" />
+    <Resource Include="Resources\Materials\tie_blue.jpg" />
+    <Resource Include="Resources\Materials\tie_colourful.jpg" />
+    <Resource Include="Resources\Materials\tie_dark.jpg" />
+    <Resource Include="Resources\Materials\tie_gray.jpg" />
+    <Resource Include="Resources\Materials\tie_green.jpg" />
+    <Resource Include="Resources\Materials\tie_stripes.jpg" />
+    <Resource Include="Resources\Materials\top_pink.jpg" />
+    <Resource Include="Resources\Materials\top_weaves.jpg" />
+    <Resource Include="Resources\Materials\tshirt_coral_blue.jpg" />
+    <Resource Include="Resources\Materials\tshirt_green_blue.jpg" />
+    <Resource Include="Resources\Materials\tshirt_navy.jpg" />
+    <Resource Include="Resources\Materials\tshirt_olive.jpg" />
+    <Resource Include="Resources\Materials\tshirt_orange_blue.jpg" />
+    <Resource Include="Resources\Materials\big_skirt_green.jpg" />
+    <Resource Include="Resources\Images\Tops\big_top_colourful.png" />
+    <Resource Include="Resources\Images\Tops\big_top_dark.png" />
+    <Resource Include="Resources\Images\Tops\big_top_green.png" />
+    <Resource Include="Resources\Images\Tops\long_top_blue.png" />
+    <Resource Include="Resources\Images\Tops\long_top_pink.png" />
+    <Resource Include="Resources\Images\Tops\top_blue.png" />
+    <Resource Include="Resources\Images\Tops\top_green.png" />
+    <Resource Include="Resources\Images\Tops\top_orange.png" />
+    <Resource Include="Resources\Images\Tops\top_red.png" />
+    <Resource Include="Resources\Images\Tops\tshirt_coral_blue.png" />
+    <Resource Include="Resources\Images\Tops\tshirt_green_blue.png" />
+    <Resource Include="Resources\Images\Tops\tshirt_navy.png" />
+    <Resource Include="Resources\Images\Tops\tshirt_olive.png" />
+    <Resource Include="Resources\Images\Tops\tshirt_orange_blue.png" />
+    <Resource Include="Resources\Images\Ties\tie_beige.png" />
+    <Resource Include="Resources\Images\Ties\tie_blue.png" />
+    <Resource Include="Resources\Images\Ties\tie_color.png" />
+    <Resource Include="Resources\Images\Ties\tie_dark.png" />
+    <Resource Include="Resources\Images\Ties\tie_gray.png" />
+    <Resource Include="Resources\Images\Ties\tie_green.png" />
+    <Resource Include="Resources\Images\Ties\tie_stripes.jpg" />
+    <Resource Include="Resources\Images\Skirts\breezy_skirt_red.png" />
+    <Resource Include="Resources\Images\Skirts\breezy_skirt_waves.png" />
+    <Resource Include="Resources\Images\Skirts\breezy_skirt_winter.png" />
+    <Resource Include="Resources\Images\Skirts\long_skirt.png" />
+    <Resource Include="Resources\Images\Skirts\long_skirt_bikes.png" />
+    <Resource Include="Resources\Images\Skirts\long_skirt_indian.png" />
+    <Resource Include="Resources\Images\Skirts\long_skirt_violet.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_checked.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_denim.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_green_stripes.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_navy.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_red.png" />
+    <Resource Include="Resources\Images\Skirts\medium_skirt_violet.png" />
+    <Resource Include="Resources\Images\Hats\cowboy_dark.png" />
+    <Resource Include="Resources\Images\Hats\cowboy_hat.png" />
+    <Resource Include="Resources\Images\Hats\cowboy_straw.png" />
+    <Resource Include="Resources\Images\Hats\fedora_hat_black.png" />
+    <Resource Include="Resources\Images\Hats\fedora_hat_brown.png" />
+    <Resource Include="Resources\Images\Hats\fedora_hat_darkgreen.png" />
+    <Resource Include="Resources\Images\Hats\hat_black.png" />
+    <Resource Include="Resources\Images\Hats\hat_brown.png" />
+    <Resource Include="Resources\Images\Hats\hat_white.png" />
+    <Resource Include="Resources\Images\Glasses\glass_blue.png" />
+    <Resource Include="Resources\Images\Glasses\glass_maroon.png" />
+    <Resource Include="Resources\Images\Glasses\glass_red.png" />
+    <Resource Include="Resources\Images\Glasses\glass_sea.png" />
+    <Resource Include="Resources\Images\Glasses\glass_yellow.png" />
+    <Resource Include="Resources\Images\Glasses\sunglass_green.png" />
+    <Resource Include="Resources\Images\Glasses\sunglass_orange.png" />
+    <Resource Include="Resources\Images\Glasses\sunglass_violet.png" />
+    <Resource Include="Resources\Images\Dresses\dress_beige.png" />
+    <Resource Include="Resources\Images\Dresses\dress_blue.png" />
+    <Resource Include="Resources\Images\Dresses\dress_dark.png" />
+    <Resource Include="Resources\Images\Dresses\dress_darkgreen.png" />
+    <Resource Include="Resources\Images\Dresses\dress_egipt.png" />
+    <Resource Include="Resources\Images\Dresses\dress_green.png" />
+    <Resource Include="Resources\Images\Dresses\dress_kitchen.png" />
+    <Resource Include="Resources\Images\Dresses\dress_navy.png" />
+    <Resource Include="Resources\Images\Dresses\dress_orange.png" />
+    <Resource Include="Resources\Images\Dresses\dress_pink.png" />
+    <Resource Include="Resources\Images\Dresses\dress_red.png" />
+    <Resource Include="Resources\Images\Dresses\dress_sunny.png" />
+    <Resource Include="Resources\Images\Dresses\dress_violet.png" />
+    <Resource Include="Resources\Images\Bags\armani_bag_beige.png" />
+    <Resource Include="Resources\Images\Bags\armani_bag_camel.png" />
+    <Resource Include="Resources\Images\Bags\armani_bag_white.png" />
+    <Resource Include="Resources\Images\Bags\men_bag_brown.png" />
+    <Resource Include="Resources\Images\Bags\men_bag_brown2.png" />
+    <Resource Include="Resources\Images\Bags\men_bag_gray.png" />
+    <Resource Include="Resources\Images\Bags\small_bag_beige.png" />
+    <Resource Include="Resources\Images\Bags\small_bag_brown.png" />
+    <Resource Include="Resources\Images\Bags\small_bag_camel.png" />
+    <Resource Include="Resources\Images\Bags\small_bag_gray.png" />
+    <Resource Include="Resources\Images\Bags\sport_bag_blue.png" />
+    <Resource Include="Resources\Images\Bags\sport_bag_green.png" />
+    <Resource Include="Resources\Images\Bags\sport_bag_red.png" />
+    <Resource Include="Resources\Images\Bags\suitcase_brown.png" />
+    <Resource Include="Resources\Images\Bags\suitcase_brown2.png" />
+    <Resource Include="Resources\Images\Bags\suitcase_gray.png" />
+    <Resource Include="Resources\Icons\Menu\arrows_smaller.png" />
+    <Resource Include="Resources\Icons\Menu\arrows_up_down.png" />
+    <Resource Include="Resources\Icons\Menu\horizontal_arrows.png" />
+    <Resource Include="Resources\Icons\Menu\horizontal_arrows_thinner.png" />
+    <Resource Include="Resources\Icons\Menu\menu.png" />
+    <Resource Include="Resources\Icons\Menu\menu_arrows.png" />
+    <Resource Include="Resources\Icons\Menu\menu_camera.png" />
+    <Resource Include="Resources\Icons\Menu\menu_clear.png" />
+    <Resource Include="Resources\Icons\Menu\menu_clearOne.png" />
+    <Resource Include="Resources\Icons\Menu\menu_clearSet.png" />
+    <Resource Include="Resources\Icons\Menu\menu_doors.png" />
+    <Resource Include="Resources\Icons\Menu\menu_menWomen.png" />
+    <Resource Include="Resources\Icons\Menu\menu_speaker.png" />
+    <Resource Include="Resources\Icons\Menu\move_down.png" />
+    <Resource Include="Resources\Icons\Menu\move_up.png" />
+    <Resource Include="Resources\Icons\Menu\no.png" />
+    <Resource Include="Resources\Icons\Menu\vertical_arrows.png" />
+    <Resource Include="Resources\Icons\Menu\vertical_arrows_smaller.png" />
+    <Resource Include="Resources\Icons\Menu\yes.png" />
+    <Resource Include="Resources\Icons\Menu\arrows_bigger.png" />
+    <Resource Include="Resources\Icons\Categories\bag_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\glasses_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\hat_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\skirt_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\tie_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\top_symbol.png" />
+    <Resource Include="Resources\Icons\Categories\dress_symbol.png" />
+    <Resource Include="Resources\Icons\hand.png" />
+    <Resource Include="Resources\curtains.jpg" />
+    <Resource Include="Resources\splash_screen_image.png" />
+    <Resource Include="Resources\watermark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

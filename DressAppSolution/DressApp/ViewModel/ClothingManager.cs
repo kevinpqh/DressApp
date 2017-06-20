@@ -9,6 +9,7 @@ using HelixToolkit.Wpf;
 using Microsoft.Kinect;
 using DressApp.ViewModel.ButtonItems;
 using DressApp.ViewModel.Helpers;
+using DressApp.Model.ClothingItems;
 
 namespace DressApp.ViewModel
 {

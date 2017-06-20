@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Input;
+using Microsoft.Practices.Prism.Commands;
 
 namespace DressApp.ViewModel.ButtonItems
 {

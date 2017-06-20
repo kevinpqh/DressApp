@@ -14,7 +14,7 @@ namespace DressApp.Model
 {
     public class SkeletonManager : ViewModelBase
     {
-        #region Public Properties
+        #region Prpiedades publicas
 
 
         public ObservableCollection<Polyline> SkeletonParts
@@ -31,12 +31,13 @@ namespace DressApp.Model
                 }
             }
         }
-        #endregion Public Properties
-        #region Private Fields
+        #endregion
 
+        #region Atributos Privados
         private ObservableCollection<Polyline> _skeletonModels;
-        #endregion Private Fields
-        #region Public Methods
+        #endregion
+        
+        #region Metodos Publicos
 
         public void DrawSkeleton(Skeleton[] skeletons, Brush brush, KinectSensor sensor, double width, double height)
         {
@@ -51,8 +52,9 @@ namespace DressApp.Model
             }
             SkeletonParts = skeletonModels;
         }
-        #endregion Public Methods
-        #region Private Methods
+        #endregion
+
+        #region Metodos Privados
 
 
         private IEnumerable<JointType> CreateBody()
@@ -133,6 +135,6 @@ namespace DressApp.Model
 
             return figure;
         }
-        #endregion Private Methods
+        #endregion
     }
 }

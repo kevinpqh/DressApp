@@ -7,7 +7,7 @@ namespace DressApp.View.Helpers
 {
     public class ItemsVisual3D : ModelVisual3D
     {
-        #region Dependency Properties
+        #region Propiedades de Dependencia
 
         // Propiedades de ItemTemplate 
         public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register(

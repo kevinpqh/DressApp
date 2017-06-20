@@ -1,11 +1,17 @@
-﻿using System;
+﻿using DressApp.Model.ClothingItems;
+using DressApp.ViewModel.ButtonItems;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Kinect;
 
 namespace DressApp.ViewModel
 {
+    //view model para la visra
     public class KinectViewModel : ViewModelBase
     {
         #region Atributos Privados
@@ -22,7 +28,7 @@ namespace DressApp.ViewModel
         // Get el button player.
         public static SoundPlayer ButtonPlayer { get; private set; }
         
-        // Get or set el clothing manager.
+        // Get o set el clothing manager.
         ClothingManager ClothingManager
         {
             get { return _clothingManager; }

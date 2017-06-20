@@ -15,7 +15,7 @@ namespace DressApp.ViewModel.ButtonItems.TopMenuButtons
             : base(image)
         { }
         #endregion
-        #region Methodos
+        #region Metodos
         // on / off del sonido
         public override void ClickExecuted()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DressApp.Model.ClothingItems;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace DressApp.ViewModel.ButtonItems.TopMenuButtons
     class ChangeTypeButtonViewModel : TopMenuButtonViewModel
     {
         #region Contructor
-        
         //inicializacion de instancia
         public ChangeTypeButtonViewModel(Bitmap image)
             : base(image)

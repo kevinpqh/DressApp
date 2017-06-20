@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DressApp.Model.ClothingItems;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ namespace DressApp.ViewModel.ButtonItems
     {
         #region Atributos Privados
         
-        //tipo de categoria
+        //tipo
         private ClothingItemBase.MaleFemaleType _type;
       
         // Lista de ropas de la categoria seleccionada

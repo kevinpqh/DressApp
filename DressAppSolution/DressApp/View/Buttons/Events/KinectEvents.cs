@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace KinectFittingRoom.View.Buttons.Events
+namespace DressApp.View.Buttons.Events
 {
     /// <summary>
     /// Handles the Kinect input

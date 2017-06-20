@@ -1,4 +1,4 @@
-﻿using KinectFittingRoom.View.Buttons.Events;
+﻿using DressApp.View.Buttons.Events;
 using System;
 using System.Globalization;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace KinectFittingRoom.View.Buttons
+namespace DressApp.View.Buttons
 {
 
     /// Screenshot 

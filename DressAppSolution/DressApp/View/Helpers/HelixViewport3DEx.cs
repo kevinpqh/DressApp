@@ -10,7 +10,7 @@ namespace DressApp.View.Helpers
     {
         #region Private Fields
 
-    // matriz3D a cero
+        // matriz3D a cero
 
         private Matrix3D _zeroMatrix = new Matrix3D(0, 0, 0, 0
                                                  , 0, 0, 0, 0

@@ -1,11 +1,11 @@
-using KinectFittingRoom.View.Buttons.Events;
+using DressApp.View.Buttons.Events;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace KinectFittingRoom.View.Buttons
+namespace DressApp.View.Buttons
 {
  
     public class KinectButton : Button
