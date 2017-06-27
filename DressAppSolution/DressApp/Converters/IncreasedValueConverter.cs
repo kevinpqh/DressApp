@@ -3,9 +3,7 @@ using System.Windows.Data;
 
 namespace DressApp.Converters
 {
-    /// <summary>
-    /// Converts the value adding the value of the parameter
-    /// </summary>
+    // Convierte los valores agregando el valor de los parametros
     class IncreasedValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

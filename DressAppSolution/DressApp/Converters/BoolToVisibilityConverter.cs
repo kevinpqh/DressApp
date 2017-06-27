@@ -4,7 +4,7 @@ using System.Windows.Data;
 namespace DressApp.Converters
 {
     
-    // Converts boolean values to Visibility
+    // Convierte boolean a valores Visibles
    
     public class BoolToVisibilityConverter : IValueConverter
     {
