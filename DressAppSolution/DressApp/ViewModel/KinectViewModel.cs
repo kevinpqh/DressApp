@@ -155,6 +155,11 @@ namespace DressApp.ViewModel
                     { Image = Properties.Resources.breezy_skirt_waves, BottomJointToTrackScale = JointType.FootLeft }
                      , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\big_skirt_red.obj")
                     { Image = Properties.Resources.breezy_skirt_red, BottomJointToTrackScale = JointType.FootLeft }
+                     , new SkirtButtonViewModel(ClothingItemBase.ClothingType.SkirtItem, @".\Resources\Models\Skirts\big_skirt_luma.obj")
+                    { Image = Properties.Resources.bolsokevin, BottomJointToTrackScale = JointType.FootLeft }
+                 
+
+                     
                 }
             };
         }
@@ -298,6 +303,8 @@ namespace DressApp.ViewModel
                         { Image = Properties.Resources.suitcase_brown2 }
                         , new BagButtonViewModel(ClothingItemBase.ClothingType.BagItem, ClothingItemBase.MaleFemaleType.Male, @".\Resources\Models\Bags\suitcase_gray.obj")
                         { Image = Properties.Resources.suitcase_gray }
+                        , new BagButtonViewModel(ClothingItemBase.ClothingType.BagItem, ClothingItemBase.MaleFemaleType.Female, @".\Resources\Models\Bags\Backpack.obj")
+                        { Image = Properties.Resources.bolsokevin }
                     }
             };
         }

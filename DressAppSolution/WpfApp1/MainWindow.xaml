@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+       
         Title="Administrador de ropas"
-        Height="748" Width="1000" Background="#FFBD4E68" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" VerticalAlignment="Top" WindowStyle="None" WindowStartupLocation="CenterScreen">
-    <Window.Effect>
-        <DropShadowEffect/>
-    </Window.Effect>
+        Height="748" Width="1000" Background="#FFBD4E68" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" VerticalAlignment="Top" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowDrop="True">
+    
     <Grid Background="#FFFFFDFD">
         <DockPanel HorizontalAlignment="Left" Height="730" LastChildFill="False" Margin="4,3,0,0" VerticalAlignment="Top" Width="118">
             <Grid Height="728" Margin="0,2,0,0" VerticalAlignment="Top" Width="116" ScrollViewer.HorizontalScrollBarVisibility="Visible">

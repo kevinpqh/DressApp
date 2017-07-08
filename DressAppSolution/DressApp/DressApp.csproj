@@ -219,6 +219,8 @@
     <None Include="Resources\Models\Bags\armani_bag_camel.obj" />
     <None Include="Resources\Models\Bags\armani_bag_white.mtl" />
     <None Include="Resources\Models\Bags\armani_bag_white.obj" />
+    <None Include="Resources\Models\Bags\Backpack.mtl" />
+    <None Include="Resources\Models\Bags\Backpack.obj" />
     <None Include="Resources\Models\Bags\men_bag_brown.mtl" />
     <None Include="Resources\Models\Bags\men_bag_brown.obj" />
     <None Include="Resources\Models\Bags\men_bag_brown2.mtl" />
@@ -307,6 +309,10 @@
     <None Include="Resources\Models\Hats\hat_white.obj" />
     <None Include="Resources\Models\Skirts\big_skirt_green.mtl" />
     <None Include="Resources\Models\Skirts\big_skirt_green.obj" />
+    <None Include="Resources\Models\Skirts\big_skirt_luma.mtl" />
+    <None Include="Resources\Models\Skirts\big_skirt_luma.obj" />
+    <None Include="Resources\Models\Skirts\big_skirt_nuevo.mtl" />
+    <None Include="Resources\Models\Skirts\big_skirt_nuevo.obj" />
     <None Include="Resources\Models\Skirts\big_skirt_red.mtl" />
     <None Include="Resources\Models\Skirts\big_skirt_red.obj" />
     <None Include="Resources\Models\Skirts\big_skirt_waves.mtl" />
@@ -385,6 +391,7 @@
   <ItemGroup>
     <Content Include="Resources\ButtonClick.wav" />
     <Content Include="Resources\CameraClick.wav" />
+    <Resource Include="Resources\Images\Bags\bolsokevin.png" />
     <Resource Include="Resources\Materials\big_skirt_red.jpg" />
     <Resource Include="Resources\Materials\big_skirt_waves.jpg" />
     <Resource Include="Resources\Materials\cowboy_hat_straw.jpg" />
