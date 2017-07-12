@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
        
@@ -58,6 +59,12 @@
         </DockPanel>
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Margin="136,3,0,8" Width="636" Background="#FFFDF4FD">
             <Grid Height="725" Margin="0,6,0,-2" VerticalAlignment="Top" Width="640">
+
+                <h:HelixViewport3D x:Name="viewPort3d" ZoomExtentsWhenLoaded="true" Grid.RowSpan="2" >
+                    <!-- Remember to add light to the scene -->
+                    <h:DefaultLights/>
+                </h:HelixViewport3D>
+
                 <Label Content="DressApp" HorizontalAlignment="Left" Height="58" Margin="20,44,0,0" VerticalAlignment="Top" Width="504"/>
                 <Label Content="Label" HorizontalAlignment="Left" Height="274" Margin="24,136,0,0" VerticalAlignment="Top" Width="474"/>
                 <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="54,476,0,0" VerticalAlignment="Top" Width="186"/>
