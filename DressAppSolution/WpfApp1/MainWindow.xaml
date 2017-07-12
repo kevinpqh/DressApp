@@ -8,7 +8,7 @@
        
         Title="Administrador de ropas"
         Height="748" Width="1000" Background="#FFBD4E68" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" VerticalAlignment="Top" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowDrop="True">
-    
+
     <Grid Background="#FFFFFDFD">
         <DockPanel HorizontalAlignment="Left" Height="730" LastChildFill="False" Margin="4,3,0,0" VerticalAlignment="Top" Width="118">
             <Grid Height="728" Margin="0,2,0,0" VerticalAlignment="Top" Width="116" ScrollViewer.HorizontalScrollBarVisibility="Visible">
@@ -18,38 +18,38 @@
                         <GradientStop Color="#FFF1F1F1" Offset="0.45"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <Button Content="" HorizontalAlignment="Left" Height="74" Margin="24,64,0,0" VerticalAlignment="Top" Width="76" Opacity="0.9" BorderThickness="1" Cursor="Hand">
+                <Button x:Name="Hat" Content="" HorizontalAlignment="Left" Height="74" Margin="24,64,0,0" VerticalAlignment="Top" Width="76" Opacity="0.9" BorderThickness="1" Cursor="Hand" Click="Hat_Click" IsCancel="True" IsHitTestVisible="False">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\hat_2.jpg"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" HorizontalAlignment="Left" Height="66" Margin="24,450,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand">
+                <Button x:Name="Dresses" Content="" HorizontalAlignment="Left" Height="66" Margin="24,444,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Dresses_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\dress_2.jpg"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" HorizontalAlignment="Left" Margin="24,160,0,0" VerticalAlignment="Top" Width="73" Height="70" Cursor="Hand">
+                <Button x:Name="Glasses" Content="" HorizontalAlignment="Left" Margin="24,160,0,0" VerticalAlignment="Top" Width="73" Height="70" Cursor="Hand" IsHitTestVisible="False">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\glasses_2.jpg"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" HorizontalAlignment="Left" Margin="24,254,0,0" VerticalAlignment="Top" Width="73" Height="70" Click="Button_Click" Cursor="Hand">
+                <Button x:Name="Blouse" Content="" HorizontalAlignment="Left" Margin="24,347,0,0" VerticalAlignment="Top" Width="73" Height="70" Click="Blouse_Click" Cursor="Hand" RenderTransformOrigin="0.582,0.075">
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\tie_2.jpg" Stretch="UniformToFill"/>
+                        <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\blouse.jpg" Stretch="UniformToFill"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" HorizontalAlignment="Left" Margin="24,354,0,0" VerticalAlignment="Top" Width="77" Height="70" RenderTransformOrigin="0.475,0.48" Cursor="Hand">
+                <Button x:Name="T_shirt" Content="" HorizontalAlignment="Left" Margin="24,254,0,0" VerticalAlignment="Top" Width="77" Height="70" RenderTransformOrigin="0.496,-1.447" Cursor="Hand" Click="T_shirt_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\polo_2.jpg"/>
                     </Button.Background>
                 </Button>
                 <Label Content="Categorías " HorizontalAlignment="Left" Height="38" Margin="-2,8,0,0" VerticalAlignment="Top" Width="116" FontFamily="Pristina" FontSize="22" HorizontalContentAlignment="Center" RenderTransformOrigin="0.488,0.421" Background="#FFFBFBF5"/>
-                <Button Content="" HorizontalAlignment="Left" Height="66" Margin="24,540,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand">
+                <Button x:Name="Skirt" Content="" HorizontalAlignment="Left" Height="66" Margin="24,536,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Skirt_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\skirt_2.jpg"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" HorizontalAlignment="Left" Height="66" Margin="24,630,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand">
+                <Button x:Name="Bags" Content="" HorizontalAlignment="Left" Height="66" Margin="24,630,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Bags_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\Luma\DressApp\DressAppSolution\DressApp\Resources\Icons\Categories\bag_2.jpg" Stretch="UniformToFill"/>
                     </Button.Background>
@@ -74,8 +74,21 @@
             </DockPanel.Background>
         </DockPanel>
         <Label Content="Desarrollado por JoinedKeys&#xD;&#xA;Todos los derechos reservados 2017&#x9; :v&#x9;&#x9;" HorizontalAlignment="Left" Height="70" Margin="132,645,0,0" VerticalAlignment="Top" Width="586" FontSize="16" FontFamily="Malgun Gothic" Background="{x:Null}"/>
-        <Grid HorizontalAlignment="Left" Height="735" Margin="779,4,0,0" VerticalAlignment="Top" Width="204">
-            <Button Content="Eliminar&#xD;&#xA;" HorizontalAlignment="Left" Height="51" Margin="94,30,0,0" VerticalAlignment="Top" Width="57" Cursor="None" Focusable="False"/>
+        <Grid HorizontalAlignment="Left" Height="735" Margin="779,4,0,0" VerticalAlignment="Top" Width="204"/>
+        <Grid HorizontalAlignment="Left" Height="737" Margin="783,2,0,0" VerticalAlignment="Top" Width="207">
+            <ListBox HorizontalAlignment="Left" Height="662" Margin="13,66,0,0" VerticalAlignment="Top" Width="179">
+                <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button1_Click"/>
+                <Button x:Name="Button2" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.571,0.116"/>
+                <Button x:Name="Button3" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button4" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button5" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button6" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button7" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button8" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button9" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+                <Button x:Name="Button10" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" RenderTransformOrigin="0.511,1.874"/>
+            </ListBox>
+            <Label x:Name="Prendas" Content="Prendas" HorizontalAlignment="Left" Margin="19,15,0,0" VerticalAlignment="Top" Height="41" Width="170" FontFamily="Pristina" FontSize="24" HorizontalContentAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>
