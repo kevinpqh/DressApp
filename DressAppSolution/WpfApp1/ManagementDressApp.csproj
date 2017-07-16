@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HelixToolkit">
-      <HintPath>..\..\..\..\DressApp\DressApp\DressAppSolution\packages\HelixToolkit.2015.1.715\lib\portable-net4+sl4+wp71+win8\HelixToolkit.dll</HintPath>
+      <HintPath>..\packages\HelixToolkit.2015.1.715\lib\portable-net4+sl4+wp71+win8\HelixToolkit.dll</HintPath>
     </Reference>
     <Reference Include="HelixToolkit.Wpf">
-      <HintPath>..\..\..\..\DressApp\DressApp\DressAppSolution\packages\HelixToolkit.Wpf.2015.1.715\lib\net45\HelixToolkit.Wpf.dll</HintPath>
+      <HintPath>..\packages\HelixToolkit.Wpf.2015.1.715\lib\net45\HelixToolkit.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -63,6 +63,9 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel3D.xaml.cs">
+      <DependentUpon>ViewModel3D.xaml</DependentUpon>
+    </Compile>
     <Page Include="OpenningWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModel3D.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
