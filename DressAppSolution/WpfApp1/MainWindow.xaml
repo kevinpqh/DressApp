@@ -25,7 +25,7 @@
                 <Button x:Name="T_shirt" Content="" HorizontalAlignment="Left" Margin="24,254,0,0" VerticalAlignment="Top" Width="77" Height="70" RenderTransformOrigin="0.496,-1.447" Cursor="Hand" Click="T_shirt_Click"/>
                 <Label Content="Categorías " HorizontalAlignment="Left" Height="38" Margin="-2,8,0,0" VerticalAlignment="Top" Width="116" FontFamily="Pristina" FontSize="22" HorizontalContentAlignment="Center" RenderTransformOrigin="0.488,0.421" Background="#FFFBFBF5"/>
                 <Button x:Name="Skirt" Content="" HorizontalAlignment="Left" Height="66" Margin="24,466,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Skirt_Click"/>
-                <Button x:Name="Bags" Content="" HorizontalAlignment="Left" Height="66" Margin="24,570,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Bags_Click"/>
+                <Button x:Name="Bags" Content="" HorizontalAlignment="Left" Height="66" Margin="24,570,0,0" VerticalAlignment="Top" Width="76" Cursor="Hand" Click="Bags_Click" IsHitTestVisible="False"/>
             </Grid>
         </DockPanel>
         <DockPanel HorizontalAlignment="Left" LastChildFill="False" Margin="136,3,0,8" Width="636" Background="#FFFDF4FD">
