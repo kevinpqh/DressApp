@@ -37,7 +37,7 @@
                 </h:HelixViewport3D>
 
                 <Label Content="DressApp" HorizontalAlignment="Left" Height="58" Margin="20,44,0,0" VerticalAlignment="Top" Width="504"/>
-                <Label Content="Label" HorizontalAlignment="Left" Height="274" Margin="24,136,0,0" VerticalAlignment="Top" Width="474"/>
+                <Label Content="" HorizontalAlignment="Left" Height="274" Margin="24,136,0,0" VerticalAlignment="Top" Width="474"/>
                 <Button x:Name="TextureEdit" Content="Editar Textura" HorizontalAlignment="Left" Height="33" Margin="117,493,0,0" VerticalAlignment="Top" Width="109" Click="EditTexture_Click"/>
                 <Button x:Name="ShowModel" Content="Mostrar" HorizontalAlignment="Left" Margin="361,493,0,0" VerticalAlignment="Top" Width="93" Height="33" Click="ShowModel_Click"/>
             </Grid>
@@ -50,20 +50,20 @@
                 </LinearGradientBrush>
             </DockPanel.Background>
         </DockPanel>
-        <Label Content="Desarrollado por JoinedKeys&#xD;&#xA;Todos los derechos reservados 2017&#x9; :v&#x9;&#x9;" HorizontalAlignment="Left" Height="70" Margin="132,645,0,0" VerticalAlignment="Top" Width="586" FontSize="16" FontFamily="Malgun Gothic" Background="{x:Null}"/>
+        <Label Content="Desarrollado por JoinedKeys&#xD;&#xA;Todos los derechos reservados 2017&#x9; &#x9;&#x9;" HorizontalAlignment="Left" Height="70" Margin="132,645,0,0" VerticalAlignment="Top" Width="586" FontSize="16" FontFamily="Malgun Gothic" Background="{x:Null}"/>
         <Grid HorizontalAlignment="Left" Height="735" Margin="779,4,0,0" VerticalAlignment="Top" Width="204"/>
         <Grid HorizontalAlignment="Left" Height="737" Margin="783,2,0,0" VerticalAlignment="Top" Width="207">
             <ListBox HorizontalAlignment="Left" Height="662" Margin="13,66,0,0" VerticalAlignment="Top" Width="179">
-                <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_1"/>
-                <Button x:Name="Button2" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_2"/>
-                <Button x:Name="Button3" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_3"/>
-                <Button x:Name="Button4" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_4"/>
-                <Button x:Name="Button5" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_5"/>
-                <Button x:Name="Button6" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_6"/>
-                <Button x:Name="Button7" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_7"/>
-                <Button x:Name="Button8" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_8"/>
-                <Button x:Name="Button9" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_9"/>
-                <Button x:Name="Button10" Content="Button" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_10"/>
+                <Button x:Name="Button1" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_1"/>
+                <Button x:Name="Button2" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_2"/>
+                <Button x:Name="Button3" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_3"/>
+                <Button x:Name="Button4" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_4"/>
+                <Button x:Name="Button5" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_5"/>
+                <Button x:Name="Button6" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_6"/>
+                <Button x:Name="Button7" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_7"/>
+                <Button x:Name="Button8" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_8"/>
+                <Button x:Name="Button9" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_9"/>
+                <Button x:Name="Button10" Content="" HorizontalAlignment="Left" Margin="42,20,0,0" VerticalAlignment="Top" Width="71" Height="69" Click="Button_Click_10"/>
             </ListBox>
             <Label x:Name="Prendas" Content="Prendas" HorizontalAlignment="Left" Margin="19,15,0,0" VerticalAlignment="Top" Height="41" Width="170" FontFamily="Pristina" FontSize="24" HorizontalContentAlignment="Center"/>
         </Grid>

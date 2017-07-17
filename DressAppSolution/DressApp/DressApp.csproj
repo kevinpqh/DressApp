@@ -429,6 +429,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\Skirts\big_skirt_green.png" />
+    <None Include="Resources\_resources_Images_Skirts_big_skirt_green.png.bmp" />
+    <None Include="Resources\big_skirt_waves.bmp" />
     <Content Include="Resources\ButtonClick.wav" />
     <Content Include="Resources\CameraClick.wav" />
     <Resource Include="Resources\Images\Bags\bolsokevin.png" />

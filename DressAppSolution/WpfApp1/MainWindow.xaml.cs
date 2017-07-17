@@ -38,12 +38,10 @@ namespace WpfApp1
             "tshirt_coral_blue",
             "tshirt_green_blue",
             "tshirt_navy",
-            "tshirt_olive",
-            "tshirt_orange_blue" };
+            "tshirt_olive"};
 
-        private string[] mapModelSkirt = { "big_skirt_luma",
-        "big_skirt_nuevo",
-        "big_skirt_red",
+        private string[] mapModelSkirt = {"big_skirt_green",
+        "big_skirt_waves",
         "long_skirt_bikes",
         "long_skirt_indian",
         "medium_skirt_checked",
@@ -62,10 +60,7 @@ namespace WpfApp1
         "dress_kitchen",
         "dress_navy",
         "dress_orange",
-        "dress_pink",
-        "dress_red",
-        "dress_sunny",
-        "dress_violet" };
+        "dress_pink"};
 
         private ImageBrush[] brush = new ImageBrush[10];
         private BitmapImage[] bitImage = new BitmapImage[10];
