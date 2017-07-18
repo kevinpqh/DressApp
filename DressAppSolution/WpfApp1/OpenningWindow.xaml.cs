@@ -49,14 +49,27 @@ namespace WpfApp1
 
         private void Dress_Click(object sender, RoutedEventArgs e)
         {
-            //Process.Start("C:\\Program Files (x86)\\Notepad++\\notepad++.exe");
-            this.Close();
+            //DressApp.App vare = new DressApp.App();
+            //vare.InitializeComponent();
+            //DressApp.App vare = new DressApp.App();
+
+            //DressApp.MainWindow DressWindow = new DressApp.MainWindow();
+            ////DressWindow.SetResourceReference(new DressApp.ViewModel.KinectViewModelLoader());
+            //DressWindow.DataContext = new DressApp.ViewModel.KinectViewModelLoader();
+            //DressWindow.Show();
+            //          vare.Run();
+            Close();
+
+            Process.Start("DressApp.exe");
+            
         }
 
+        
         private void Management_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe");
-            this.Close();
+            Window1 managementWindow = new Window1();
+            managementWindow.Show();
+            Close();
 
         }
     }
