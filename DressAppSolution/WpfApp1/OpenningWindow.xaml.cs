@@ -24,9 +24,28 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            ImageBrush back = new ImageBrush();
+            back.ImageSource = LoadImage(@"Resources\background.jpg");
+            gridBackground.Background = back;
+        }
+        private BitmapImage LoadImage(string myImageFile)
+        {
+            BitmapImage myRetVal = null;
+            if (myImageFile != null)
+            {
+                BitmapImage image = new BitmapImage();
+                using (System.IO.FileStream stream = System.IO.File.OpenRead(myImageFile))
+                {
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = stream;
+                    image.EndInit();
+                }
+                myRetVal = image;
+            }
+            return myRetVal;
         }
 
-   
 
         private void Dress_Click(object sender, RoutedEventArgs e)
         {

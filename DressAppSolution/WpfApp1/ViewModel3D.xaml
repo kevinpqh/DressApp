@@ -6,7 +6,8 @@
         xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window2" Height="300" Width="300">
+        Title="Window2" Height="300" Width="300"
+        Closing="DataWindow_Closing">
     <Grid>
         <h:HelixViewport3D x:Name="viewPort3d" ZoomExtentsWhenLoaded="true" Grid.RowSpan="2" >
             <!-- Remember to add light to the scene -->

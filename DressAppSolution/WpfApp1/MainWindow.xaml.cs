@@ -154,17 +154,31 @@ namespace WpfApp1
                 MessageBox.Show("Escoger modelo", "Error");
                 return;
             }
+            TemporalExchange("");
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             Nullable<bool> result = dlg.ShowDialog();
-
-            // Process open file dialog box results
+                        // Process open file dialog box results
             if (result == true)
             {
                 // Open document
                 string filename = dlg.FileName;
                 MessageBox.Show(filename, "Información");
+                
                 ExchangeTexture(filename);
+              
+            }
 
+            switch (indexCategory)
+            {
+                case 0:
+                    T_shirt_Click(null, null);
+                    break;
+                case 1:
+                    Dresses_Click(null, null);
+                    break;
+                case 2:
+                    Skirt_Click(null, null);
+                    break;
             }
         }
 
@@ -190,9 +204,20 @@ namespace WpfApp1
         private void ExchangeTexture(String NewTexture)
         {
             //TODO: cambiar txtura ficheros
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             System.IO.File.Copy(NewTexture, @"Resources\Materials\" + currentModel+".jpg", true);
         }
 
+        private void TemporalExchange(String Texture)
+        {
+            //TODO: cambiar txtura ficheros
+            brush[indexModel] = new ImageBrush();
+            bitImage[indexModel] = LoadImage(@"Resources\watermark.png");
+            brush[indexModel].ImageSource = bitImage[indexModel];
+            buttomAdmin[indexModel].Background = brush[indexModel];
+        }
 
         //El boton Hat_Click esta deshabilitado
         private void Hat_Click(object sender, RoutedEventArgs e)
@@ -207,7 +232,7 @@ namespace WpfApp1
             for (int i = 0; i < 10; i++)
             {
                 brush[i] = new ImageBrush();
-                bitImage[i] = LoadImage(@"Resources\Images\Tops\" + mapModelTops[i] + ".png");
+                bitImage[i] = LoadImage(@"Resources\Materials\" + mapModelTops[i] + ".jpg");
                 brush[i].ImageSource = bitImage[i];
                 buttomAdmin[i].Background = brush[i];
             }
@@ -225,7 +250,7 @@ namespace WpfApp1
             for (int i = 0; i < 10; i++)
             {
                 brush[i] = new ImageBrush();
-                bitImage[i] = LoadImage(@"Resources\Images\Dresses\" + mapModelDresses[i] + ".png");
+                bitImage[i] = LoadImage(@"Resources\Materials\" + mapModelDresses[i] + ".jpg");
                 brush[i].ImageSource = bitImage[i];
                 buttomAdmin[i].Background = brush[i];
             }
@@ -233,11 +258,11 @@ namespace WpfApp1
 
         private void Skirt_Click(object sender, RoutedEventArgs e)
         {
-            indexCategory = 1;
+            indexCategory = 2;
             for (int i = 0; i < 10; i++)
             {
                 brush[i] = new ImageBrush();
-                bitImage[i] = LoadImage(@"Resources\Images\Skirts\" + mapModelSkirt[i] + ".png");
+                bitImage[i] = LoadImage(@"Resources\Materials\" + mapModelSkirt[i] + ".jpg");
                 brush[i].ImageSource = bitImage[i];
                 buttomAdmin[i].Background = brush[i];
             }

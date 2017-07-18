@@ -1,6 +1,7 @@
 ﻿using HelixToolkit.Wpf;
 using System;
-
+using System.ComponentModel;
+using System.IO;
 using System.Windows;
 
 using System.Windows.Media.Media3D;
@@ -14,7 +15,7 @@ namespace WpfApp1
     {
         Model3D device;
         //private const string MODEL_PATH = @"C:\Users\kevin\Documents\DressApp\DressApp\DressAppSolution\DressApp\Resources\Models\Tops\big_top_dark.obj";
-
+        ModelVisual3D device3D;
         public ViewModel3D()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            ModelVisual3D device3D = new ModelVisual3D();
+            device3D = new ModelVisual3D();
             device3D.Content = Display3d(path);
             viewPort3d.Children.Add(device3D);
         }
@@ -68,5 +69,36 @@ namespace WpfApp1
             }
             return device;
         }
+
+        bool isDataDirty = false;
+
+        void DataWindow_Closing(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("Closing called");
+
+            viewPort3d.Children.Remove(device3D);
+
+
+            // If data is dirty, notify user and ask for a response
+            if (this.isDataDirty)
+            {
+                string msg = "Data is dirty. Close without saving?";
+                MessageBoxResult result =
+                  MessageBox.Show(
+                    msg,
+                    "Data App",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    // If user doesn't want to close, cancel closure
+                    e.Cancel = true;
+                }
+            }
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+        }
+
     }
 }
