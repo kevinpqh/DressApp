@@ -67,10 +67,31 @@ namespace WpfApp1
         private Button[] buttomAdmin = new Button[10];
 
         Model3D device;
+
+        public WebBrowser WebBrowserbrowser { get; private set; }
+
         public Window1()
         {
             // Inicializar
             InitializeComponent();
+
+            //Background
+            ImageBrush background_style = new ImageBrush();
+            background_style.ImageSource = LoadImage(@"Resources\dressapp.jpg");
+            background_main.Background = background_style;
+            background_main.Background.Opacity = 0.45;
+
+            //Logotipos
+            ImageBrush logo1 = new ImageBrush();
+           logo1.ImageSource = LoadImage(@"Resources\logo.jpg");
+            Logo_1.Background = logo1;
+
+
+            ImageBrush logo2 = new ImageBrush();
+            logo2.ImageSource = LoadImage(@"Resources\logo2.png");
+            Logo_2.Background = logo2;
+            
+            //Categorias de prendas
             ImageBrush hat = new ImageBrush();
             hat.ImageSource = LoadImage(@"Resources\Icons\Categories\hat_2.jpg");
             Hat.Background = hat;
@@ -348,5 +369,29 @@ namespace WpfApp1
             //view.DataContext = MODEL_PATH;
             view.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PreguntaUsuario_Button(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"Resources/Manual de Usuario.pdf";
+                Uri pdf = new Uri(path, UriKind.RelativeOrAbsolute);
+                process.StartInfo.FileName = pdf.LocalPath;
+                process.Start();
+                process.WaitForExit();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Could not open the file.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+
     }
 }
